@@ -17,7 +17,9 @@ public class move_to_click : MonoBehaviour
 
             if (Physics.Raycast(dir, out raycastHit, Mathf.Infinity)){
                 if (Vector3.Distance(transform.position, raycastHit.point) > 0.1f){
-                    transform.position = raycastHit.point;
+                    Vector3 newPos = new Vector3(raycastHit.point.x, -1, raycastHit.point.z);
+                    transform.position = newPos;
+                    
                 }
 			}
         }
